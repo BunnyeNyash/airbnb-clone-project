@@ -187,6 +187,34 @@ This provides both RESTful and GraphQL APIs for interacting with the backend. Th
 This makes use of indexing and caching strategies to improve data retrieval speeds and reduce server load. It is crucial for maintaining performance as the platform scales with more users and data.
 
 
+## API Security
+There needs to be security measures that secures the backend APIs as the platform will handle sensitive user data, financial transactions, and property information, and listed below are some of the measures to be put in place. The measures will ensure data integrity, confidentiality, and system availability.
+
+### 1. **Authentication**
+Only registered users can access certain endpoints, and secure authentication mechanisms will be used. This will ensure that users are who they claim to be and prevents unauthorized access to accounts or data.
+
+### 2. **Authorization**
+Role-based access controls will be implemented to restrict actions based on user roles. This will prevent the users from performing unauthorized operations, such as modifying other users’ data or managing properties they do not own.
+
+### 3. **Rate Limiting**
+This will limit the number of API requests a user or IP address can make within a certain timeframe. This will help protect the system against abuse, denial-of-service (DoS) attacks, and brute-force attempts.
+
+### 4. **Data Validation & Sanitization**
+All incoming data will be validated and sanitized to prevent injection attacks such as SQL injection or XSS. This will ensure only clean, expected data is processed and stored.
+
+### 5. **HTTPS Enforcement**
+All API traffic will be encrypted using HTTPS to protect data in transit from interception and tampering. This is especially crucial for protecting login credentials and payment details.
+
+### 6. **Secure Payment Handling**
+Sensitive payment information will not be stored directly, hence payment processing will be handled through secure third-party gateways that comply with industry standards. This will ensure that user financial data is protected and minimizes legal liabilities.
+
+### Why Security Matters
+- **User Data Protection**: Ensures personal details like emails, passwords, and IDs are kept safe.
+- **Property & Booking Integrity**: Prevents unauthorized changes to listings or bookings.
+- **Financial Safety**: Secures payment transactions and reduces the risk of fraud or data breaches.
+- **Platform Trust**: A secure platform builds user confidence and long-term credibility.
+
+
 ---
 
 This repository will include project milestones that are required by ALX.

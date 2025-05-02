@@ -53,7 +53,116 @@ The PM coordinates the project timeline, makes sure tasks are completed on time,
 - **Containerization**: Docker (For consistent development and production environments)
 - **Version Control**: Git/GitHub (For collaborative development and code management)
 
+## Database Design
+
+The database for this project is designed to support core functionality including user management, property listings, bookings, reviews, and payments. Listed here are all the main entities and their relationships.
+
+### Key Entities
+
 ---
+
+### 1. **User**
+
+Represents a user of the system, either the hotel owner or the customer doing the booking.
+
+**Fields:**
+- `id` (Primary Key)
+- `username` (String, Unique)
+- `email` (String, Unique)
+- `password_hash` (String)
+- `is_host` (Boolean)
+
+**Relationships:**
+- One user can list multiple properties.
+- One user can make multiple bookings.
+- One user can leave multiple reviews.
+
+---
+
+### 2. **Property**
+
+Represents a property that can be listed by the hotel owner and booked by customers.
+
+**Fields:**
+- `id` (Primary Key)
+- `owner_id` (Foreign Key to User)
+- `title` (String)
+- `description` (Text)
+- `price_per_night` (Decimal)
+- `location` (String)
+
+**Relationships:**
+- Each property belongs to one user (hotel owner).
+- One property can have many bookings.
+- One property can receive many reviews.
+
+---
+
+### 3. **Booking**
+
+Represents a reservation made by a customer for a property.
+
+**Fields:**
+- `id` (Primary Key)
+- `user_id` (Foreign Key to User)
+- `property_id` (Foreign Key to Property)
+- `check_in` (Date)
+- `check_out` (Date)
+- `total_price` (Decimal)
+
+**Relationships:**
+- Each booking is made by one user.
+- Each booking belongs to one property.
+- Each booking may have one associated payment.
+
+---
+
+### 4. **Review**
+
+Represents a review left by a customer for a property.
+
+**Fields:**
+- `id` (Primary Key)
+- `user_id` (Foreign Key to User)
+- `property_id` (Foreign Key to Property)
+- `rating` (Integer, 1–5)
+- `comment` (Text)
+
+**Relationships:**
+- Each review is written by one user.
+- Each review is linked to one property.
+
+---
+
+### 5. **Payment**
+
+Represents a payment transaction made for a booking.
+
+**Fields:**
+- `id` (Primary Key)
+- `booking_id` (Foreign Key to Booking)
+- `amount` (Decimal)
+- `payment_method` (String)
+- `status` (String - e.g., 'completed', 'pending')
+
+**Relationships:**
+- Each payment is linked to one booking.
+
+---
+
+### Entity Relationships Summary
+
+- **User ↔ Property**: One-to-Many (A hotel owner can have many properties)
+- **User ↔ Booking**: One-to-Many (A customer can make many bookings)
+- **Property ↔ Booking**: One-to-Many (A property can have many bookings)
+- **User ↔ Review**: One-to-Many (A customer can write many reviews)
+- **Property ↔ Review**: One-to-Many (A property can receive many reviews)
+- **Booking ↔ Payment**: One-to-One (Each booking has one payment)
+
+---
+
+
+
 
 This repository will include project milestones that are required by ALX.
 

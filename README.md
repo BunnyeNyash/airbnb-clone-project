@@ -45,7 +45,7 @@ The PM coordinates the project timeline, makes sure tasks are completed on time,
 
 ---
 
-## Technology Stack.
+## Technology Stack
 - **Backend**: Django (Python framework for rapid development and clean design)
 - **Database**: MySQL (Relational database for structured data storage)
 - **API**: GraphQL (Flexible query language for efficient data retrieval)

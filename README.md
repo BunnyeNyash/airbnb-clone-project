@@ -1,7 +1,7 @@
 # Airbnb Clone Project
 
 ## Overview
-The Airbnb Clone Project is a full-stack web application designed to replicate the core functionalities of a booking platform like Airbnb. This project aims to provide hands-on experience in building a scalable, secure, and efficient web application using modern software development practices. It focuses on backend architecture, database design, API development, application security, and CI/CD pipeline integration.
+The Airbnb Clone Project is a full-stack web application designed to replicate the core functionalities of a booking platform called Airbnb. This project aims to provide hands-on experience in building a scalable, secure, and efficient web application using modern software development practices. It focuses on backend architecture, database design, API development, application security, and CI/CD pipeline integration.
 
 ## Project Goals
 - Build a robust and scalable booking platform with features such as user authentication, property listings, booking management, and secure transactions.
@@ -161,8 +161,33 @@ Represents a payment transaction made for a booking.
 
 ---
 
+## Feature Breakdown
+
+This section holds a breakdown of the main features that will be in the Airbnb clone and how each contributes to the project.
+
+### 1. **User Management**
+This will handle the registrations, authentications, and profile management for both the hotel owners and the customers. This feature ensures that only verified users can list properties or make bookings, maintaining the integrity and security of the platform.
+
+### 2. **Property Management**
+This enables the hotel owners to create, update, and manage property listings. Each listing will contain essential details such as title of the property, description of the property, the pricing, and the location, forming the core of the booking system.
+
+### 3. **Booking System**
+This allows the customers to reserve available properties for specific dates, manage their booking details, and track upcoming stays. It ensures availability is respected and handles user check-in and check-out dates.
+
+### 4. **Payment Processing**
+This integrates a secure payment system to handle financial transactions related to bookings. It records payment details and statuses to ensure transparency and accountability between the customers and the hotel owners.
+
+### 5. **Review System**
+This gives the customers the ability to leave reviews and rate their stays, fostering trust among users. This also helps maintain high-quality listings by providing feedback to hotel owners and future customers.
+
+### 6. **API Integration (REST & GraphQL)**
+This provides both RESTful and GraphQL APIs for interacting with the backend. This dual API approach offers flexibility and ease of integration for various frontend clients or third-party services.
+
+### 7. **Database Optimization**
+This makes use of indexing and caching strategies to improve data retrieval speeds and reduce server load. It is crucial for maintaining performance as the platform scales with more users and data.
 
 
+---
 
 This repository will include project milestones that are required by ALX.
 

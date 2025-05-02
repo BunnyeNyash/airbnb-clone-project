@@ -25,7 +25,7 @@ The BA acts as the bridge between the client and the development team. They anal
 ### Backend Developer
 The BE developer is responsible for building the core logic of the app, such as user authentication, booking functionality, and connecting to the database. They ensure the app works smoothly behind the scenes.
 
-### 🗄️ Database Administrator (DBA)
+### Database Administrator (DBA)
 The DBA designs and manages the structure of the database. Ensures that data like user profiles, listings, and bookings are stored efficiently, securely, and can be easily accessed by the backend.
 
 ### UI/UX Designer
@@ -37,7 +37,7 @@ The QAE tests the website to make sure everything works correctly and meets the 
 ### Test Automation Engineer
 The TAE writes code to automatically test the application’s key features. This helps ensure fast and reliable testing, especially after updates or new features.
 
-### ⚙DevOps Engineer
+### DevOps Engineer
 The DevOps engineer handles deployment and server-side infrastructure. They help the team release updates faster and keep the app running reliably using CI/CD pipelines and monitoring tools.
 
 ### Project Manager (PM)
@@ -214,6 +214,22 @@ Sensitive payment information will not be stored directly, hence payment process
 - **Financial Safety**: Secures payment transactions and reduces the risk of fraud or data breaches.
 - **Platform Trust**: A secure platform builds user confidence and long-term credibility.
 
+
+## CI/CD Pipeline
+
+CI/CD (Continuous Integration and Continuous Deployment) pipelines are automated workflows that help streamline the process of building, testing, and deploying code changes. In this Airbnb Clone project, CI/CD will ensure that every update to the codebase is automatically tested and deployed without manual intervention, reducing the risk of human error and enabling rapid iteration.
+
+### Why CI/CD is Important
+- **Automated Testing**: CI/CD ensures code quality by running tests on every commit or pull request.
+- **Faster Deployment**: CI/CD allows new features and bug fixes to be deployed quickly and reliably.
+- **Improved Collaboration**: CI/CD encourages continuous integration of code from different team members with minimal conflicts.
+- **Early Detection of Issues**: CI/CD catches bugs or integration problems before they reach production.
+
+### Tools that might be used for this project
+- **GitHub Actions**: This automates testing, linting, and deployment steps on each push or PR.
+- **Docker**: This ensures consistent environments across development, testing, and production stages.
+
+By integrating CI/CD pipelines, the project will maintain high-quality standards, promotes team efficiency, and ensures a reliable and maintainable backend system.
 
 ---
 

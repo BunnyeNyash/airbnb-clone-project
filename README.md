@@ -66,11 +66,14 @@ The database for this project is designed to support core functionality includin
 Represents a user of the system, either the hotel owner or the customer doing the booking.
 
 **Fields:**
-- `id` (Primary Key)
-- `username` (String, Unique)
+- `user_id` (Primary Key)
+- `first_name` (String)
+- `last_name` (String)
 - `email` (String, Unique)
 - `password_hash` (String)
-- `is_host` (Boolean)
+- `phone_number` (string)
+- `role` (Enum; guest, host, admin)
+- `created_at` (DateTime)
 
 **Relationships:**
 - One user can list multiple properties.
@@ -84,12 +87,14 @@ Represents a user of the system, either the hotel owner or the customer doing th
 Represents a property that can be listed by the hotel owner and booked by customers.
 
 **Fields:**
-- `id` (Primary Key)
-- `owner_id` (Foreign Key to User)
-- `title` (String)
+- `propert_id` (Primary Key)
+- `host_id` (Foreign Key to User)
+- `name` (String)
 - `description` (Text)
-- `price_per_night` (Decimal)
 - `location` (String)
+- `pricepernight` (Decimal)
+- `created_at` (DateTime)
+- `updated_at` (DateTime)
 
 **Relationships:**
 - Each property belongs to one user (hotel owner).
@@ -103,12 +108,14 @@ Represents a property that can be listed by the hotel owner and booked by custom
 Represents a reservation made by a customer for a property.
 
 **Fields:**
-- `id` (Primary Key)
-- `user_id` (Foreign Key to User)
+- `booking_id` (Primary Key)
 - `property_id` (Foreign Key to Property)
-- `check_in` (Date)
-- `check_out` (Date)
+- `user_id` (Foreign Key to User)
+- `start_date` (Date)
+- `end_date` (Date)
 - `total_price` (Decimal)
+- `status` (Enum; pending, confirmed, canceled)
+- `created_at` (DateTime)
 
 **Relationships:**
 - Each booking is made by one user.
@@ -122,11 +129,12 @@ Represents a reservation made by a customer for a property.
 Represents a review left by a customer for a property.
 
 **Fields:**
-- `id` (Primary Key)
-- `user_id` (Foreign Key to User)
+- `review_id` (Primary Key)
 - `property_id` (Foreign Key to Property)
+- `user_id` (Foreign Key to User)
 - `rating` (Integer, 1–5)
 - `comment` (Text)
+- `created_at` (DateTime)
 
 **Relationships:**
 - Each review is written by one user.
@@ -139,11 +147,11 @@ Represents a review left by a customer for a property.
 Represents a payment transaction made for a booking.
 
 **Fields:**
-- `id` (Primary Key)
+- `payment_id` (Primary Key)
 - `booking_id` (Foreign Key to Booking)
 - `amount` (Decimal)
-- `payment_method` (String)
-- `status` (String - e.g., 'completed', 'pending')
+- `payment_date` (DateTime)
+- `payment_method` (Enum; credit_card, paypal, stripe)
 
 **Relationships:**
 - Each payment is linked to one booking.
